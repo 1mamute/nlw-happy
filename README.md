@@ -8,5 +8,5 @@ A ideiá do happy foi criada pela Rockseat. É um aplicativo fictício para cone
 
 ## O que foi usado?
 
-> React
-> TypeScript
+- React
+- TypeScript
