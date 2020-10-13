@@ -1,72 +1,72 @@
 #page-map {
-	width: 100vw;
-	height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-	position: relative;
-	display: flex;
+  position: relative;
+  display: flex;
 }
 
 #page-map aside {
-	width: 440px;
+  width: 440px;
 
-	/* Gradiente / Blue */
-	background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+  /* Gradiente / Blue */
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
 
-	padding: 80px;
+  padding: 80px;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #page-map aside h2 {
-	font-size: 40px;
-	font-weight: 800;
-	line-height: 42px;
-	margin-top: 64px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 42px;
+  margin-top: 64px;
 }
 
 #page-map aside p {
-	line-height: 28px;
-	margin-top: 24px;
+  line-height: 28px;
+  margin-top: 24px;
 }
 
 #page-map aside footer {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	line-height: 24px;
+  line-height: 24px;
 }
 
 #page-map aside footer strong {
-	font-weight: 800;
+  font-weight: 800;
 }
 
 #page-map .leaflet-container {
-	z-index: 5;
+  z-index: 5;
 }
 
 #page-map .create-orphanage {
-	position: absolute;
+  position: absolute;
 
-	z-index: 10;
+  z-index: 10;
 
-	right: 40px;
-	bottom: 40px;
+  right: 40px;
+  bottom: 40px;
 
-	width: 64px;
-	height: 64px;
+  width: 64px;
+  height: 64px;
 
-	background: #15c3d6;
-	border-radius: 20px;
+  background: #15c3d6;
+  border-radius: 20px;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 #page-map .create-orphanage:hover {
-	background: #17d6eb;
+  background: #17d6eb;
 }
