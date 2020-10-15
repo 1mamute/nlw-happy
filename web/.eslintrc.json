@@ -32,7 +32,6 @@
     "react/jsx-filename-extension": "off",
     "comma-dangle": ["error", "only-multiline"],
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["off"],
     "import/extensions": ["error", "never"],
     "import/no-unresolved": ["off"]
   }

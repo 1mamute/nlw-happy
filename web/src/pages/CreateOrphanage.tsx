@@ -7,6 +7,7 @@ import { FiPlus } from 'react-icons/fi';
 import mapMarkerImg from '../images/Map-Marker.svg';
 
 import '../styles/pages/create-orphanage.css';
+
 import Sidebar from '../components/Sidebar';
 
 const happyMapIcon = L.icon({

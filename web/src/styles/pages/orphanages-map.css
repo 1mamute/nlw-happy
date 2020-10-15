@@ -8,10 +8,7 @@
 
 #page-map aside {
   width: 440px;
-
-  /* Gradiente / Blue */
   background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-
   padding: 80px;
 
   display: flex;
@@ -34,7 +31,6 @@
 #page-map aside footer {
   display: flex;
   flex-direction: column;
-
   line-height: 24px;
 }
 
@@ -48,15 +44,13 @@
 
 #page-map .create-orphanage {
   position: absolute;
-
-  z-index: 10;
-
   right: 40px;
   bottom: 40px;
 
+  z-index: 10;
+
   width: 64px;
   height: 64px;
-
   background: #15c3d6;
   border-radius: 20px;
 
@@ -74,6 +68,7 @@
 #page-map .map-popup .leaflet-popup-content-wrapper {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
+  box-shadow: none;
 }
 
 #page-map .map-popup .leaflet-popup-content {
@@ -91,6 +86,7 @@
   width: 40px;
   height: 40px;
   background: #15c3d6;
+  box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16);
   border-radius: 12px;
 
   display: flex;

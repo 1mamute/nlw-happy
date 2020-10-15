@@ -11,11 +11,7 @@ export default function Sidebar() {
 
   return (
     <aside className="app-sidebar">
-      <header>
-        <img src={mapMarkerImg} alt="Happy" />
-        <h2>Escolha um orfanato no mapa</h2>
-        <p>Muitas crianças estão esperando a sua visita :)</p>
-      </header>
+      <img src={mapMarkerImg} alt="Happy" />
 
       <footer>
         <button type="button" onClick={goBack}>

@@ -1,16 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import { FiPlus, FiArrowRight } from 'react-icons/fi';
+import Leaflet from 'leaflet';
+import { Link } from 'react-router-dom';
 
 import '../styles/pages/orphanages-map.css';
 
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import Leaflet from 'leaflet';
-
 import 'leaflet/dist/leaflet.css';
 
 import mapMarkerImg from '../images/Map-Marker.svg';
+
 import Sidebar from '../components/Sidebar';
 
 const mapIcon = Leaflet.icon({
@@ -23,7 +22,20 @@ const mapIcon = Leaflet.icon({
 export default function OrphanagesMap() {
   return (
     <div id="page-map">
-      <Sidebar />
+      <aside>
+        <header>
+          <img src={mapMarkerImg} alt="Happy" />
+
+          <h2>Escolha um orfanato no mapa</h2>
+
+          <p>Muitas crianças estão esperando a sua visita {':)'}</p>
+        </header>
+
+        <footer>
+          <strong>Rio do Sul</strong>
+          <span>Santa Catarina</span>
+        </footer>
+      </aside>
       <Map
         center={[-22.7146356, -47.6218322]}
         zoom={13.5}
