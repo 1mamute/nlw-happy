@@ -84,10 +84,10 @@ export default function CreateOrphanage() {
             <legend>Dados</legend>
 
             <Map
-              center={[-27.2092052, -49.6401092]}
+              center={[-22.7252895, -47.6595703]}
               style={{ width: '100%', height: 280 }}
               zoom={15}
-              onclick={handleMapClick}>
+              onClick={handleMapClick}>
               <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
               {position.latitude !== 0 ? (
