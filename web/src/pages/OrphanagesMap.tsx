@@ -39,8 +39,8 @@ export default function OrphanagesMap() {
         </header>
 
         <footer>
-          <strong>Rio do Sul</strong>
-          <span>Santa Catarina</span>
+          <strong>Piracicaba</strong>
+          <span>São Paulo</span>
         </footer>
       </aside>
       <Map
