@@ -46,22 +46,19 @@ export default function OrphanagesMap() {
       <Map
         center={[-22.7146356, -47.6218322]}
         zoom={13.5}
-        style={{ width: '100%', height: '100%' }}
-      >
+        style={{ width: '100%', height: '100%' }}>
         <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {orphanages.map((orphanage) => {
           return (
             <Marker
               position={[orphanage.latitude, orphanage.longitude]}
               icon={mapIcon}
-              key={orphanage.id}
-            >
+              key={orphanage.id}>
               <Popup
                 closeButton={false}
                 minWidth={240}
                 maxWidth={240}
-                className="map-popup"
-              >
+                className="map-popup">
                 {orphanage.name}
                 <Link to={`/orphanages/${orphanage.id}`}>
                   <FiArrowRight size={20} color="#FFF" />

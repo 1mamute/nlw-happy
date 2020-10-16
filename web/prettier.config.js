@@ -4,4 +4,5 @@ module.exports = {
   arrowParens: 'always',
   trailingComma: 'es5',
   endOfLine: 'auto',
+  jsxBracketSameLine: true,
 };
