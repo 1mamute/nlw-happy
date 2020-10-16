@@ -60,7 +60,6 @@ export default function CreateOrphanage() {
     data.append('about', about);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
-    data.append('position', String(position));
     data.append('instructions', instructions);
     data.append('opening_hours', opening_hours);
     data.append('open_on_weekends', String(open_on_weekends));
