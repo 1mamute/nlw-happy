@@ -9,6 +9,7 @@ import {
 import { Feather } from '@expo/vector-icons';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 
+import { useNavigation } from '@react-navigation/native';
 import mapMarker from '../images/MapMarker.png';
 
 const styles = StyleSheet.create({
@@ -69,7 +70,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const OrphanagesMap = (): JSX.Element => (
+const OrphanagesMap = (): any => {
+  const navigation = useNavigation();
+
+  function handleNavigateToOrphanageDetails(): void {
+    navigation.navigate('OrphanageDetails');
+  }
+
   <View style={styles.container}>
     <MapView
       provider={PROVIDER_GOOGLE}
@@ -93,8 +100,7 @@ const OrphanagesMap = (): JSX.Element => (
         <Callout
           tooltip
           onPress={() => {
-            // eslint-disable-next-line no-alert
-            alert('clicado');
+            handleNavigateToOrphanageDetails();
           }}>
           <View style={styles.calloutContainer}>
             <Text style={styles.calloutText}>Lar do gabriel</Text>
@@ -115,7 +121,7 @@ const OrphanagesMap = (): JSX.Element => (
         <Feather name="plus" size={20} color="#FFF" />
       </TouchableOpacity>
     </View>
-  </View>
-);
+  </View>;
+};
 
 export default OrphanagesMap;
