@@ -1,5 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Dimensions, Text } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Dimensions,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
+import { Feather } from '@expo/vector-icons';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 
 import mapMarker from './src/images/MapMarker.png';
@@ -30,6 +37,39 @@ const styles = StyleSheet.create({
     color: '#0089a5',
     fontSize: 14,
   },
+
+  footer: {
+    position: 'absolute',
+    left: 24,
+    right: 24,
+    bottom: 32,
+
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    height: 56,
+    paddingLeft: 24,
+
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
+    elevation: 3,
+  },
+
+  footerText: {
+    fontFamily: 'Nunito_700Bold',
+    color: '#8fa7b3',
+  },
+
+  createOrphanageButton: {
+    width: 56,
+    height: 56,
+    backgroundColor: '#15c3d6',
+    borderRadius: 20,
+
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default function App() {
@@ -41,22 +81,40 @@ export default function App() {
         initialRegion={{
           latitude: -22.7146356,
           longitude: -47.6218322,
-          latitudeDelta: 0.006,
-          longitudeDelta: 0.006,
+          latitudeDelta: 0.008,
+          longitudeDelta: 0.008,
         }}>
         <Marker
           icon={mapMarker}
+          calloutAnchor={{
+            x: 2.05,
+            y: 0.7,
+          }}
           coordinate={{
             latitude: -22.7146356,
             longitude: -47.6218322,
           }}>
-          <Callout tooltip>
+          <Callout
+            tooltip
+            onPress={() => {
+              alert('clicado');
+            }}>
             <View style={styles.calloutContainer}>
               <Text style={styles.calloutText}>Lar do gabriel</Text>
             </View>
           </Callout>
         </Marker>
       </MapView>
+
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>2 orfanatos encontrados</Text>
+
+        <TouchableOpacity
+          style={styles.createOrphanageButton}
+          onPress={() => {}}>
+          <Feather name="plus" size={20} color="#FFF" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
