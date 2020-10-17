@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import {
   StyleSheet,
@@ -8,6 +9,12 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
+import { useFonts } from 'expo-font';
+import {
+  Nunito_600SemiBold,
+  Nunito_700Bold,
+  Nunito_800ExtraBold,
+} from '@expo-google-fonts/nunito';
 
 import mapMarker from './src/images/MapMarker.png';
 
@@ -73,6 +80,16 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Nunito_600SemiBold,
+    Nunito_700Bold,
+    Nunito_800ExtraBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <MapView
@@ -111,7 +128,9 @@ export default function App() {
 
         <TouchableOpacity
           style={styles.createOrphanageButton}
-          onPress={() => {}}>
+          onPress={() => {
+            alert('clicou aqui');
+          }}>
           <Feather name="plus" size={20} color="#FFF" />
         </TouchableOpacity>
       </View>
