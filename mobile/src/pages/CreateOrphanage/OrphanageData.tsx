@@ -1,8 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 
-function OrphanageDetails(): JSX.Element {
+export default function OrphanageData(): any {
   return <View />;
 }
-
-export default OrphanageDetails;

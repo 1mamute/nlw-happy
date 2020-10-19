@@ -4,17 +4,50 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 import OrphanagesMap from './pages/OrphanagesMap';
-import OrphanagesDetails from './pages/OrphanageDetails';
+import OrphanageDetails from './pages/OrphanageDetails';
+
+import SelectMapPosition from './pages/CreateOrphanage/SelectMapPosition';
+import OrphanageData from './pages/CreateOrphanage/OrphanageData';
+
+import Header from './components/Header';
 
 const { Navigator, Screen } = createStackNavigator();
 
-const Routes: React.FC = (): JSX.Element => (
-  <NavigationContainer>
-    <Navigator screenOptions={{ headerShown: false }}>
-      <Screen name="OrphanagesMap" component={OrphanagesMap} />
-      <Screen name="OrphanagesDetails" component={OrphanagesDetails} />
-    </Navigator>
-  </NavigationContainer>
-);
+export default function Routes(): JSX.Element {
+  return (
+    <NavigationContainer>
+      <Navigator
+        screenOptions={{
+          headerShown: false,
+          cardStyle: { backgroundColor: '#f2f3f5' },
+        }}>
+        <Screen name="OrphanagesMap" component={OrphanagesMap} />
+        <Screen
+          name="OrphanageDetails"
+          component={OrphanageDetails}
+          options={{
+            headerShown: true,
 
-export default Routes;
+            header: () => <Header showCancel={false} title="Orfanato" />,
+          }}
+        />
+        <Screen
+          name="SelectMapPosition"
+          component={SelectMapPosition}
+          options={{
+            headerShown: true,
+            header: () => <Header title="Selecione no mapa" />,
+          }}
+        />
+        <Screen
+          name="OrphanageData"
+          component={OrphanageData}
+          options={{
+            headerShown: true,
+            header: () => <Header title="Informe os dados" />,
+          }}
+        />
+      </Navigator>
+    </NavigationContainer>
+  );
+}

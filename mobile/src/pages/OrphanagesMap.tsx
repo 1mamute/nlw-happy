@@ -4,12 +4,13 @@ import {
   View,
   Dimensions,
   Text,
-  TouchableOpacity,
+  MeasureInWindowOnSuccessCallback,
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 
 import { useNavigation } from '@react-navigation/native';
+import { RectButton } from 'react-native-gesture-handler';
 import mapMarker from '../images/MapMarker.png';
 
 const styles = StyleSheet.create({
@@ -70,58 +71,59 @@ const styles = StyleSheet.create({
   },
 });
 
-const OrphanagesMap = (): any => {
+export default function OrphanagesMap(): JSX.Element {
   const navigation = useNavigation();
 
   function handleNavigateToOrphanageDetails(): void {
     navigation.navigate('OrphanageDetails');
   }
 
-  <View style={styles.container}>
-    <MapView
-      provider={PROVIDER_GOOGLE}
-      style={styles.map}
-      initialRegion={{
-        latitude: -22.7146356,
-        longitude: -47.6218322,
-        latitudeDelta: 0.008,
-        longitudeDelta: 0.008,
-      }}>
-      <Marker
-        icon={mapMarker}
-        calloutAnchor={{
-          x: 2.05,
-          y: 0.7,
-        }}
-        coordinate={{
+  function handleNavigateToCreateOrphanage(): void {
+    navigation.navigate('SelectMapPosition');
+  }
+
+  return (
+    <View style={styles.container}>
+      <MapView
+        provider={PROVIDER_GOOGLE}
+        style={styles.map}
+        initialRegion={{
           latitude: -22.7146356,
           longitude: -47.6218322,
+          latitudeDelta: 0.008,
+          longitudeDelta: 0.008,
         }}>
-        <Callout
-          tooltip
-          onPress={() => {
-            handleNavigateToOrphanageDetails();
+        <Marker
+          icon={mapMarker}
+          calloutAnchor={{
+            x: 2.05,
+            y: 0.7,
+          }}
+          coordinate={{
+            latitude: -22.7146356,
+            longitude: -47.6218322,
           }}>
-          <View style={styles.calloutContainer}>
-            <Text style={styles.calloutText}>Lar do gabriel</Text>
-          </View>
-        </Callout>
-      </Marker>
-    </MapView>
+          <Callout
+            tooltip
+            onPress={() => {
+              handleNavigateToOrphanageDetails();
+            }}>
+            <View style={styles.calloutContainer}>
+              <Text style={styles.calloutText}>Lar do gabriel</Text>
+            </View>
+          </Callout>
+        </Marker>
+      </MapView>
 
-    <View style={styles.footer}>
-      <Text style={styles.footerText}>2 orfanatos encontrados</Text>
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>2 orfanatos encontrados</Text>
 
-      <TouchableOpacity
-        style={styles.createOrphanageButton}
-        onPress={() => {
-          // eslint-disable-next-line no-alert
-          alert('clicou aqui');
-        }}>
-        <Feather name="plus" size={20} color="#FFF" />
-      </TouchableOpacity>
+        <RectButton
+          style={styles.createOrphanageButton}
+          onPress={handleNavigateToCreateOrphanage}>
+          <Feather name="plus" size={20} color="#FFF" />
+        </RectButton>
+      </View>
     </View>
-  </View>;
-};
-
-export default OrphanagesMap;
+  );
+}
